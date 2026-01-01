@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Irene del Río - Creative Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/menu.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="logo"><a href="INDEX.HTML">IRENE DEL RIO ROMO</a></div>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul class="nav-links">
+            <li><a href="ABOUT.HTML">ABOUT</a></li>
+            <li><a href="PROJECTS.HTML">PROJECTS</a></li>
+            <li><a href="CONTACT.HTML">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">CREATIVE DESIGNER</h1>
+          </div>
+          <div class="hero-bottom-section">
+            <div class="hero-categories-left">
+              <p>BRAND IDENTITY</p>
+              <p>EDITORIAL</p>
+              <p>ILLUSTRATION</p>
+              <p>GRAPHIC ADVERTISING</p>
+            </div>
+            <div class="hero-image-wrapper">
+              <img
+                src="https://ik.imagekit.io/iapsnyfjt/portfolio/fotos%20opacidad-04.jpg"
+                alt="Irene del Río"
+                id="self-portrait"
+              />
+            </div>
+            <div class="hero-location">BASED IN MADRID</div>
+          </div>
+        </div>
+        <style>
+          .hero-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+          }
+          .hero-text {
+            position: relative;
+            z-index: 10;
+          }
+          .hero-bottom-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+            margin-top: -100px;
+          }
+          .hero-categories-left {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            flex-shrink: 0;
+            z-index: 10;
+          }
+          .hero-categories-left p {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin: 0;
+            margin-bottom: 10px;
+          }
+          .hero-categories-left p:last-child {
+            margin-bottom: 0;
+          }
+          .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+          }
+          .hero-image-wrapper img {
+            max-width: 450px;
+            max-height: 60vh;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+          }
+          .hero-location {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            flex-shrink: 0;
+            align-self: flex-start;
+            padding-top: 20px;
+            z-index: 10;
+          }
+          @media (max-width: 1024px) {
+            .hero-bottom-section {
+              margin-top: -80px;
+            }
+            .hero-image-wrapper img {
+              max-width: 350px;
+              max-height: 50vh;
+            }
+          }
+          @media (max-width: 768px) {
+            .hero-bottom-section {
+              flex-direction: column;
+              align-items: flex-start;
+              margin-top: 0;
+            }
+            .hero-image-wrapper {
+              width: 100%;
+              justify-content: center;
+              margin: 20px 0;
+            }
+            .hero-image-wrapper img {
+              max-width: 100%;
+              max-height: 400px;
+            }
+            .hero-location {
+              align-self: flex-end;
+              padding-top: 0;
+              margin-top: 15px;
+            }
+          }
+        </style>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <p class="about-text">
+          MY NAME IS IRENE DEL RÍO ROMO, I AM 21 YEARS OLD AND I AM CURRENTLY
+          STUDYING GRAPHIC AND MULTIMEDIA DESIGN AT THE UNIVERSITY OF DESIGN,
+          INNOVATION AND TECHNOLOGY IN MADRID.
+        </p>
+        <a href="#about" class="learn-more">LEARN MORE ABOUT ME.</a>
+      </div>
+    </section>
+
+    <!-- Last Project Section -->
+    <section class="last-project" id="projects">
+      <div class="container">
+        <h2 class="section-title">Last Project</h2>
+        <div class="project-preview">
+          <video id="project-video" autoplay loop muted playsinline>
+            <source
+              src="https://ik.imagekit.io/iapsnyfjt/sow/2.jpg?updatedAt=1760787225890"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="project-overlay">
+            <a href="#" class="visit-now">VISIT NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="container">
+        <div class="category-separator"></div>
+        <ul class="category-list">
+          <li>
+            <a href="#brand-identity">BRAND IDENTITY <span>></span></a>
+          </li>
+          <li>
+            <a href="#editorial">EDITORIAL <span>></span></a>
+          </li>
+          <li>
+            <a href="#illustration">ILLUSTRATION <span>></span></a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+      <div class="container">
+        <div class="carousel-wrapper">
+          <div class="carousel-text-box">
+            <div class="scrolling-text">
+              <span>CARRUSEL</span>
+              <span>CARRUSEL</span>
+              <span>CARRUSEL</span>
+              <span>CARRUSEL</span>
+              <span>CARRUSEL</span>
+              <span>CARRUSEL</span>
+            </div>
+          </div>
+          <div class="carousel-container">
+            <div class="carousel-slides" id="carousel-slides">
+              <div class="carousel-slide active">
+                <img
+                  src="https://ik.imagekit.io/your-username/carousel-1.jpg"
+                  alt="Carousel Image 1"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://ik.imagekit.io/your-username/carousel-2.jpg"
+                  alt="Carousel Image 2"
+                />
+              </div>
+              <div class="carousel-slide">
+                <img
+                  src="https://ik.imagekit.io/your-username/carousel-3.jpg"
+                  alt="Carousel Image 3"
+                />
+              </div>
+            </div>
+            <div class="carousel-dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo-circle">D</div>
+            <span>DSGNS.DELRIO</span>
+          </div>
+          <div class="footer-links">
+            <a href="#">Copyright</a>
+            <a href="#">Behance</a>
+            <a href="#">LinkedIn</a>
+          </div>
+          <div class="footer-email">DSGNS.RENERIO@GMAIL.COM</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
