@@ -72,13 +72,12 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            position: relative;
-            margin-top: -100px;
+            z-index: 1;
           }
           .hero-categories-left {
             display: flex;
             flex-direction: column;
-            text-align: left;
+            text-align: right;
             flex-shrink: 0;
             z-index: 10;
           }
@@ -95,12 +94,16 @@
             margin-bottom: 0;
           }
           .hero-image-wrapper {
-            flex: 1;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            z-index: 1;
+            width: 100%;
+            z-index: 0;
+            pointer-events: none;
           }
           .hero-image-wrapper img {
             max-width: 450px;
@@ -120,10 +123,20 @@
             align-self: flex-start;
             padding-top: 20px;
             z-index: 10;
+            margin-top: 120px;
           }
           @media (max-width: 1024px) {
             .hero-bottom-section {
-              margin-top: -80px;
+              margin-top: 100px;
+            }
+            .hero-image-wrapper {
+              top: 50px;
+            }
+            .hero-categories-left {
+              margin-top: 100px;
+            }
+            .hero-location {
+              margin-top: 100px;
             }
             .hero-image-wrapper img {
               max-width: 350px;
@@ -134,21 +147,27 @@
             .hero-bottom-section {
               flex-direction: column;
               align-items: flex-start;
-              margin-top: 0;
+              margin-top: 80px;
             }
             .hero-image-wrapper {
+              position: absolute;
+              top: 80px;
+              left: 50%;
+              transform: translateX(-50%);
               width: 100%;
               justify-content: center;
-              margin: 20px 0;
             }
             .hero-image-wrapper img {
               max-width: 100%;
               max-height: 400px;
             }
+            .hero-categories-left {
+              margin-top: 60px;
+            }
             .hero-location {
               align-self: flex-end;
               padding-top: 0;
-              margin-top: 15px;
+              margin-top: 20px;
             }
           }
         </style>
@@ -163,7 +182,7 @@
           STUDYING GRAPHIC AND MULTIMEDIA DESIGN AT THE UNIVERSITY OF DESIGN,
           INNOVATION AND TECHNOLOGY IN MADRID.
         </p>
-        <a href="#about" class="learn-more">LEARN MORE ABOUT ME.</a>
+        <a href="ABOUT.HTML" class="learn-more">LEARN MORE ABOUT ME.</a>
       </div>
     </section>
 
@@ -174,7 +193,7 @@
         <div class="project-preview">
           <video id="project-video" autoplay loop muted playsinline>
             <source
-              src="https://ik.imagekit.io/iapsnyfjt/sow/2.jpg?updatedAt=1760787225890"
+              src="https://ik.imagekit.io/iapsnyfjt/portfolio/video%20cajas.mp4"
             />
             Your browser does not support the video tag.
           </video>
@@ -185,19 +204,39 @@
       </div>
     </section>
 
+    <!-- Carousel Text Banner -->
+    <div class="carousel-text-box">
+      <div class="scrolling-text">
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+        <span>IDR / @DSGNS.DELRIO </span>
+      </div>
+    </div>
+
     <!-- Categories Section -->
     <section class="categories">
       <div class="container">
-        <div class="category-separator"></div>
         <ul class="category-list">
           <li>
-            <a href="#brand-identity">BRAND IDENTITY <span>></span></a>
+            <a href="#brand-identity">BRAND IDENTITY<span>></span></a>
+            <div class="category-separator"></div>
           </li>
           <li>
-            <a href="#editorial">EDITORIAL <span>></span></a>
+            <a href="#editorial">EDITORIAL<span>></span></a>
+            <div class="category-separator"></div>
           </li>
           <li>
-            <a href="#illustration">ILLUSTRATION <span>></span></a>
+            <a href="#illustration">ILLUSTRATION<span>></span></a>
+            <div class="category-separator"></div>
           </li>
         </ul>
       </div>
@@ -205,18 +244,7 @@
 
     <!-- Carousel Section -->
     <section class="carousel-section">
-      <div class="container">
-        <div class="carousel-wrapper">
-          <div class="carousel-text-box">
-            <div class="scrolling-text">
-              <span>CARRUSEL</span>
-              <span>CARRUSEL</span>
-              <span>CARRUSEL</span>
-              <span>CARRUSEL</span>
-              <span>CARRUSEL</span>
-              <span>CARRUSEL</span>
-            </div>
-          </div>
+      <div class="carousel-wrapper">
           <div class="carousel-container">
             <div class="carousel-slides" id="carousel-slides">
               <div class="carousel-slide active">
@@ -245,7 +273,6 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
@@ -258,12 +285,12 @@
         </nav>
         <div class="footer-content">
           <div class="footer-logo">
-            <div class="logo-circle">D</div>
+            <img src="https://ik.imagekit.io/iapsnyfjt/portfolio/EN%20BLANCO%20LOGO.png" alt="Logo" class="logo-circle" />
             <span>DSGNS.DELRIO</span>
           </div>
           <div class="footer-links">
-            <a href="#">Copyright</a>
-            <a href="#">Behance</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
             <a href="#">LinkedIn</a>
           </div>
           <div class="footer-email">DSGNS.RENERIO@GMAIL.COM</div>
