@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startCarousel() {
-    carouselInterval = setInterval(nextSlide, 3000);
+    carouselInterval = setInterval(nextSlide, 2000);
   }
 
   function stopCarousel() {
@@ -138,6 +138,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// DGT Images hover/click effect
+document.addEventListener("DOMContentLoaded", function () {
+  const dgtImageItems = document.querySelectorAll('.dgt-image-item');
+  
+  function checkMobile() {
+    return window.matchMedia('(max-width: 1024px)').matches;
+  }
+
+  dgtImageItems.forEach(item => {
+    // Click handler for all devices
+    item.addEventListener('click', function(e) {
+      // On mobile/tablet, always use click
+      // On desktop, click also works as alternative to hover
+      if (checkMobile() || e.type === 'click') {
+        // Toggle hover state
+        if (this.classList.contains('hover-active')) {
+          this.classList.remove('hover-active');
+        } else {
+          // Remove hover-active from all items first
+          dgtImageItems.forEach(i => i.classList.remove('hover-active'));
+          // Add to clicked item
+          this.classList.add('hover-active');
+        }
+      }
+    });
+  });
+});
+
 // Handle category links to scroll instantly without smooth behavior
 document.addEventListener("DOMContentLoaded", function () {
   // Handle scroll when page loads with hash
@@ -202,6 +230,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// DGT Images hover/click effect
+document.addEventListener("DOMContentLoaded", function () {
+  const dgtImageItems = document.querySelectorAll('.dgt-image-item');
+  
+  function checkMobile() {
+    return window.matchMedia('(max-width: 1024px)').matches;
+  }
+
+  dgtImageItems.forEach(item => {
+    // Click handler for all devices
+    item.addEventListener('click', function(e) {
+      // On mobile/tablet, always use click
+      // On desktop, click also works as alternative to hover
+      if (checkMobile() || e.type === 'click') {
+        // Toggle hover state
+        if (this.classList.contains('hover-active')) {
+          this.classList.remove('hover-active');
+        } else {
+          // Remove hover-active from all items first
+          dgtImageItems.forEach(i => i.classList.remove('hover-active'));
+          // Add to clicked item
+          this.classList.add('hover-active');
+        }
+      }
+    });
+  });
+});
+
 // Header shadow on scroll
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector('.header');
@@ -220,4 +276,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // Listen for scroll events
     window.addEventListener('scroll', handleScroll);
   }
+});
+
+// DGT Images hover/click effect
+document.addEventListener("DOMContentLoaded", function () {
+  const dgtImageItems = document.querySelectorAll('.dgt-image-item');
+  
+  function checkMobile() {
+    return window.matchMedia('(max-width: 1024px)').matches;
+  }
+
+  dgtImageItems.forEach(item => {
+    // Click handler for all devices
+    item.addEventListener('click', function(e) {
+      // On mobile/tablet, always use click
+      // On desktop, click also works as alternative to hover
+      if (checkMobile() || e.type === 'click') {
+        // Toggle hover state
+        if (this.classList.contains('hover-active')) {
+          this.classList.remove('hover-active');
+        } else {
+          // Remove hover-active from all items first
+          dgtImageItems.forEach(i => i.classList.remove('hover-active'));
+          // Add to clicked item
+          this.classList.add('hover-active');
+        }
+      }
+    });
+  });
 });

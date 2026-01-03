@@ -338,7 +338,7 @@ video {
 
 /* Carousel Section */
 .carousel-section {
-  padding: clamp(20px, 4vw, 40px) 0;
+  padding: clamp(10px, 2vw, 20px) 0 clamp(20px, 4vw, 40px);
   width: 100%;
   position: relative;
 }
@@ -351,7 +351,7 @@ video {
   padding: clamp(25px, 4vw, 40px) clamp(20px, 4vw, 40px) clamp(15px, 2vw, 20px);
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -440,6 +440,36 @@ video {
   object-fit: cover;
 }
 
+/* Hover image effect for carousel */
+.carousel-slide-hover {
+  position: relative;
+}
+
+.carousel-image-default,
+.carousel-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.carousel-image-hover {
+  opacity: 0;
+}
+
+.carousel-slide-hover:hover .carousel-image-default,
+.carousel-slide-hover.hover-active .carousel-image-default {
+  opacity: 0;
+}
+
+.carousel-slide-hover:hover .carousel-image-hover,
+.carousel-slide-hover.hover-active .carousel-image-hover {
+  opacity: 1;
+}
+
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -475,67 +505,60 @@ video {
   padding: clamp(50px, 6vw, 60px) 0 clamp(30px, 4vw, 40px);
 }
 
-.footer-nav {
+.footer-content {
+  text-align: center;
   display: flex;
-  justify-content: center;
-  gap: clamp(20px, 3vw, 40px);
-  margin-bottom: clamp(40px, 5vw, 50px);
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 3vw, 30px);
 }
 
-.footer-nav a {
-  font-family: "Montserrat", sans-serif;
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.5vw, 18px);
+}
+
+.footer-logo-img {
+  width: clamp(60px, 7vw, 85px);
+  height: clamp(60px, 7vw, 85px);
+  object-fit: contain;
+  display: block;
+}
+
+.footer-brand-text {
+  font-family: "Gilda Display", serif;
   font-weight: 400;
-  font-size: clamp(0.875rem, 1vw, 0.95rem);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
 }
 
-.footer-content {
-  text-align: center;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(12px, 1.5vw, 15px);
-  margin-bottom: clamp(25px, 3vw, 30px);
-}
-
-.logo-circle {
-  width: clamp(45px, 5vw, 50px);
-  height: clamp(45px, 5vw, 50px);
-  object-fit: contain;
-  display: block;
-}
-
-.footer-logo span {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
-  letter-spacing: 0.05em;
-}
-
-.footer-links {
+.footer-social {
   display: flex;
   justify-content: center;
-  gap: clamp(25px, 3vw, 30px);
-  margin-bottom: clamp(25px, 3vw, 30px);
+  gap: clamp(20px, 3vw, 30px);
 }
 
-.footer-links a {
+.footer-social a {
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: clamp(0.85rem, 1vw, 0.9rem);
+  font-weight: 300;
+  font-size: clamp(0.875rem, 1vw, 0.95rem);
   letter-spacing: 0.05em;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
+  transition: opacity 0.3s ease;
+}
+
+.footer-social a:hover {
+  opacity: 0.3;
 }
 
 .footer-email {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: clamp(0.85rem, 1vw, 0.9rem);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   letter-spacing: 0.05em;
   color: #fff;
 }

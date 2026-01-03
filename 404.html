@@ -14,13 +14,14 @@
     <link rel="stylesheet" href="assets/css/menu.css" />
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: rgba(0, 0, 0, 0.7);
-        margin: 0;
-        padding: 20px;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        min-height: 100vh !important;
+        background-color: rgba(0, 0, 0, 0.7) !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        opacity: 1 !important;
       }
 
       .error-container {
@@ -71,12 +72,13 @@
       }
     </style>
   </head>
-  <body>
+  <body class="fade-in">
     <div class="error-container">
       <h2 class="error-title">Error 404</h2>
       <p class="error-message">Something went wrong, try again</p>
-      <a href="ABOUT.HTML" class="error-return-btn">RETURN</a>
+      <a href="INDEX.HTML" class="error-return-btn">RETURN</a>
     </div>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
 
