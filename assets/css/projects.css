@@ -1,0 +1,309 @@
+/* Projects Page Styles */
+
+.projects-main {
+  padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 3vw, 40px);
+  min-height: calc(100vh - 200px);
+}
+
+.carousel-text-box {
+  margin-top: clamp(10px, 2vw, 20px) !important;
+  margin-bottom: clamp(20px, 3vw, 40px) !important;
+}
+
+.projects-hero {
+  margin-bottom: clamp(60px, 8vw, 80px);
+  position: relative;
+}
+
+.projects-title {
+  font-family: "Gilda Display", serif;
+  font-size: clamp(2.5rem, 8vw, 6.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(-80px, -8vw, -100px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.projects-content-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: clamp(20px, 3vw, 40px);
+  position: relative;
+  margin-top: clamp(100px, 12vw, 140px);
+}
+
+.projects-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 15px);
+  align-self: flex-end;
+}
+
+.projects-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+.projects-year {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  letter-spacing: 0.02em;
+  color: #000;
+  margin: 0;
+}
+
+.projects-photo {
+  width: clamp(250px, 28vw, 380px);
+  position: relative;
+  z-index: 0;
+  margin-top: clamp(-100px, -8vw, -140px);
+  flex-shrink: 0;
+}
+
+.projects-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .projects-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+  }
+
+  .projects-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-photo {
+    width: clamp(250px, 50vw, 400px);
+    margin-right: 0;
+  }
+
+  .projects-info {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: clamp(-60px, -6vw, -80px);
+  }
+
+  .projects-content-wrapper {
+    gap: clamp(30px, 5vw, 40px);
+    margin-top: clamp(80px, 10vw, 120px);
+  }
+
+  .projects-photo {
+    width: 100%;
+    max-width: 400px;
+    margin-top: clamp(-60px, -6vw, -100px);
+  }
+}
+
+/* Project Section Styles */
+.project-section {
+  padding: clamp(60px, 8vw, 80px) 0;
+}
+
+.project-section-title {
+  font-family: "Gilda Display", serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: clamp(15px, 2vw, 20px);
+}
+
+.project-title-line {
+  width: 100vw;
+  height: 0.5px;
+  background-color: #2a2a2a;
+  margin-bottom: clamp(40px, 6vw, 60px);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.project-video-wrapper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: clamp(40px, 6vw, 60px);
+  position: relative;
+  background-color: #2a2a2a;
+  height: clamp(250px, 35vw, 500px);
+  overflow: hidden;
+}
+
+.project-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-info {
+  margin-bottom: clamp(50px, 8vw, 80px);
+}
+
+.project-name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.project-description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.95rem, 1.1vw, 1rem);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  max-width: min(900px, 100%);
+  margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.project-description:last-child {
+  margin-bottom: 0;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.project-image-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.project-image-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: clamp(15px, 2vw, 20px);
+  background-color: rgba(42, 42, 42, 0.9);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 1vw, 0.95rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.project-image-item:hover .project-image-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-image-item:hover img {
+  opacity: 0.7;
+}
+
+/* Velosophy gallery - no labels, subtle animation */
+.project-gallery-2x3 .project-image-item .project-image-label {
+  display: none;
+}
+
+.project-gallery-2x3 .project-image-item {
+  transition: transform 0.3s ease;
+}
+
+.project-gallery-2x3 .project-image-item:hover {
+  transform: scale(1.02);
+}
+
+.project-gallery-2x3 .project-image-item:hover img {
+  opacity: 1;
+}
+
+/* Project Gallery 2x3 Grid */
+.project-gallery-2x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+/* Project Gallery 3x3 Grid */
+.project-gallery-3x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.project-gallery-3x3 .project-image-item {
+  transition: transform 0.3s ease;
+}
+
+.project-gallery-3x3 .project-image-item:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Project Section */
+@media (max-width: 1024px) {
+  .project-video-wrapper {
+    height: clamp(300px, 40vw, 450px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-video-wrapper {
+    height: clamp(250px, 50vw, 350px);
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 30px);
+  }
+
+  .project-gallery-2x3 {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 30px);
+  }
+
+  .project-gallery-3x3 {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-video-wrapper {
+    height: clamp(200px, 60vw, 300px);
+  }
+}
+

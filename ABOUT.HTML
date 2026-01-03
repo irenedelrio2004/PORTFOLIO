@@ -35,12 +35,145 @@
     </header>
 
     <!-- Content -->
-    <main>
+    <main class="about-main">
       <div class="container">
-        <!-- Add your about content here -->
+        <!-- Hero Section with Name and Photo -->
+        <section class="about-hero">
+          <h1 class="about-title">IRENE DEL RÍO ROMO</h1>
+          <div class="about-content-wrapper">
+            <div class="about-photo">
+              <img
+                src="https://ik.imagekit.io/iapsnyfjt/portfolio/fotos%20opacidad-03.jpg?updatedAt=1767286506992"
+                alt="Irene del Río"
+              />
+            </div>
+            <div class="about-intro">
+              <p>
+                MY NAME IS IRENE, I AM 21 YEARS OLD AND I AM CURRENTLY STUDYING
+                GRAPHIC AND MULTIMEDIA DESIGN AT THE UNIVERSITY OF DESIGN,
+                INNOVATION AND TECHNOLOGY IN MADRID.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Additional Biography -->
+        <section class="about-bio">
+          <p>
+            I'M IN MY FOURTH YEAR OF UNIVERSITY AND HAVE ALWAYS BEEN PASSIONATE
+            ABOUT GRAPHIC DESIGN AND ADVERTISING. I CONSIDER MYSELF A CREATIVE,
+            INNOVATIVE, AND OPEN-MINDED PERSON, ALWAYS SEEKING NEW OPPORTUNITIES
+            TO LEARN AND GROW PROFESSIONALLY.
+          </p>
+          <p>
+            DURING MY THIRD YEAR, I HAD THE OPPORTUNITY TO COMBINE PRACTICAL
+            TRAINING WITH INTERNATIONAL EXPERIENCE. IN THE FIRST SEMESTER, I
+            COMPLETED MY UNIVERSITY INTERNSHIP AT OSCAR MARINE'S STUDIO. THEN,
+            IN THE SECOND SEMESTER, I PARTICIPATED IN THE ERASMUS PROGRAM,
+            SPENDING MY ACADEMIC YEAR IN BUDAPEST, HUNGARY.
+          </p>
+          <p>
+            <a href="404.html" class="university-link">VISIT UNIVERSITY PAGE</a>
+          </p>
+        </section>
+
+        <!-- Accordion Sections -->
+        <section class="accordion-section">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>FORMATION</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-entry">
+                <p class="accordion-title">SOCIAL SCIENCES HIGH SCHOOL DIPLOMA - 2020-2022</p>
+                <p class="accordion-subtitle">Gredos San Diego Moratalaz School</p>
+              </div>
+              <div class="accordion-entry">
+                <p class="accordion-title">BACHELOR'S DEGREE IN GRAPHIC AND MULTIMEDIA DESIGN - 3RD YEAR. 2025</p>
+                <p class="accordion-subtitle">Budapest Metropolitan University</p>
+              </div>
+              <div class="accordion-entry">
+                <p class="accordion-title">BACHELOR'S DEGREE IN GRAPHIC AND MULTIMEDIA DESIGN - 1, 2 AND 4TH YEAR</p>
+                <p class="accordion-subtitle">University Of Design, Innovation And Technology (UDIT)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>EXPERIENCES</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-entry">
+                <p class="accordion-title">BROOKLING FITBOXING GYMS - 2023</p>
+                <p class="accordion-subtitle">Graphic wall finishes for gyms in Spain and across Europe.</p>
+              </div>
+              <div class="accordion-entry">
+                <p class="accordion-title">STUDIOS MIKADO III, S.L. - ÓSCAR MARINÉ – 2024/25</p>
+                <p class="accordion-subtitle">Logistics and execution of projects for Óscar Mariné, including adding design elements to his works and events, as well as design projects for external clients.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>DIGITAL PROGRAMS</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <ul class="programs-list">
+                <li>Photoshop: 4/5</li>
+                <li>Illustrator: 5/5</li>
+                <li>Indesign: 4/5</li>
+                <li>Procreate: 5/5</li>
+                <li>CapCut: 4/5</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>LANGUAGES</span>
+              <span class="accordion-icon">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="accordion-entry">
+                <p class="accordion-title languages-title">SPANISH: Native</p>
+              </div>
+              <div class="accordion-entry">
+                <p class="accordion-title languages-title">ENGLISH: Intermediate</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
     <script src="assets/js/main.js"></script>
+    <script>
+      // Accordion functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+        accordionHeaders.forEach((header) => {
+          header.addEventListener("click", function () {
+            const accordionItem = this.parentElement;
+            const isActive = accordionItem.classList.contains("active");
+
+            // Close all accordion items
+            document.querySelectorAll(".accordion-item").forEach((item) => {
+              item.classList.remove("active");
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+              accordionItem.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

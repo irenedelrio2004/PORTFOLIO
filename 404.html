@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 404 - Irene del Río</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/menu.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin: 0;
+        padding: 20px;
+      }
+
+      .error-container {
+        background-color: #2a2a2a;
+        padding: clamp(25px, 3vw, 35px) clamp(50px, 6vw, 80px);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .error-title {
+        font-family: "Gilda Display", serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 400;
+        color: #fff;
+        margin-bottom: clamp(20px, 3vw, 30px);
+      }
+
+      .error-message {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 300;
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        color: #fff;
+        margin-bottom: clamp(30px, 4vw, 40px);
+        letter-spacing: 0.02em;
+      }
+
+      .error-return-btn {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.875rem, 1vw, 0.95rem);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid #fff;
+        padding: clamp(12px, 1.5vw, 15px) clamp(30px, 4vw, 40px);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .error-return-btn:hover {
+        background-color: #fff;
+        color: #2a2a2a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-container">
+      <h2 class="error-title">Error 404</h2>
+      <p class="error-message">Something went wrong, try again</p>
+      <a href="ABOUT.HTML" class="error-return-btn">RETURN</a>
+    </div>
+  </body>
+</html>
+
