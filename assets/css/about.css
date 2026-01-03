@@ -20,6 +20,14 @@
   position: relative;
   z-index: 1;
   text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.about-title:hover {
+  transform: scale(1.02);
 }
 
 .about-content-wrapper {
