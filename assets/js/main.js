@@ -30,9 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+  // Carousel
   const slides = document.querySelectorAll(".carousel-slide");
   const dots = document.querySelectorAll(".dot");
   let currentSlide = 0;
@@ -89,26 +88,29 @@ document.addEventListener("DOMContentLoaded", function () {
     carouselContainer.addEventListener("mouseenter", stopCarousel);
     carouselContainer.addEventListener("mouseleave", startCarousel);
   }
-});
 
-// Page fade in/out transitions
-document.addEventListener("DOMContentLoaded", function () {
-  // Fade in on page load
-  document.body.classList.add('fade-in');
-  
-  // Fade out on link clicks to other HTML pages
-  const allLinks = document.querySelectorAll('a[href]');
-  allLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      // Check if it's a link to another HTML page (with or without hash)
-      if (href && (href.includes('.html') || href.includes('.HTML')) && !href.startsWith('http') && !href.startsWith('#')) {
-        // Don't prevent default for links with hash that go to same page
-        const isSamePageHash = href.includes('#') && !href.includes('.html') && !href.includes('.HTML');
+  // Page fade in/out
+  document.body.classList.add("fade-in");
+
+  const allLinks = document.querySelectorAll("a[href]");
+  allLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+
+      if (
+        href &&
+        (href.includes(".html") || href.includes(".HTML")) &&
+        !href.startsWith("http") &&
+        !href.startsWith("#")
+      ) {
+        const isSamePageHash =
+          href.includes("#") &&
+          !href.includes(".html") &&
+          !href.includes(".HTML");
         if (!isSamePageHash) {
           e.preventDefault();
-          document.body.style.transition = 'opacity 0.1s ease-in-out';
-          document.body.style.opacity = '0';
+          document.body.style.transition = "opacity 0.1s ease-in-out";
+          document.body.style.opacity = "0";
           setTimeout(() => {
             window.location.href = href;
           }, 100);
@@ -116,192 +118,143 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-});
 
-// Header shadow on scroll
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector('.header');
+  // Header sombra
+  const header = document.querySelector(".header");
   if (header) {
     function handleScroll() {
       if (window.scrollY > 10) {
-        header.classList.add('scrolled');
+        header.classList.add("scrolled");
       } else {
-        header.classList.remove('scrolled');
+        header.classList.remove("scrolled");
       }
     }
-    
-    // Check initial scroll position
+
     handleScroll();
-    
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScroll);
-  }
-});
-
-// DGT Images hover/click effect
-document.addEventListener("DOMContentLoaded", function () {
-  const dgtImageItems = document.querySelectorAll('.dgt-image-item');
-  
-  function checkMobile() {
-    return window.matchMedia('(max-width: 1024px)').matches;
+    window.addEventListener("scroll", handleScroll);
   }
 
-  dgtImageItems.forEach(item => {
-    // Click handler for all devices
-    item.addEventListener('click', function(e) {
-      // On mobile/tablet, always use click
-      // On desktop, click also works as alternative to hover
-      if (checkMobile() || e.type === 'click') {
-        // Toggle hover state
-        if (this.classList.contains('hover-active')) {
-          this.classList.remove('hover-active');
-        } else {
-          // Remove hover-active from all items first
-          dgtImageItems.forEach(i => i.classList.remove('hover-active'));
-          // Add to clicked item
-          this.classList.add('hover-active');
-        }
-      }
-    });
-  });
-});
-
-// Handle category links to scroll instantly without smooth behavior
-document.addEventListener("DOMContentLoaded", function () {
-  // Handle scroll when page loads with hash
   if (window.location.hash) {
-    document.documentElement.style.scrollBehavior = 'auto';
+    document.documentElement.style.scrollBehavior = "auto";
     const hash = window.location.hash.substring(1);
     const targetElement = document.getElementById(hash);
     if (targetElement) {
       setTimeout(() => {
-        targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
-        document.documentElement.style.scrollBehavior = 'smooth';
+        targetElement.scrollIntoView({ behavior: "auto", block: "start" });
+        document.documentElement.style.scrollBehavior = "smooth";
       }, 10);
     }
   }
 
-  // Handle category links clicks
-  const categoryLinks = document.querySelectorAll('.category-list a[href*="#"]');
-  categoryLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href.includes('#')) {
-        const parts = href.split('#');
+  const categoryLinks = document.querySelectorAll(
+    '.category-list a[href*="#"]'
+  );
+  categoryLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href.includes("#")) {
+        const parts = href.split("#");
         const hash = parts[parts.length - 1];
-        // If it's a link to another page, the browser will handle navigation
-        // and the hash will be processed on page load
-        if (href.includes('.html') || href.includes('.HTML')) {
-          return; // Let the browser handle navigation
+
+        if (href.includes(".html") || href.includes(".HTML")) {
+          return;
         }
         const targetElement = document.getElementById(hash);
         if (targetElement) {
           e.preventDefault();
-          // Temporarily disable smooth scroll
-          document.documentElement.style.scrollBehavior = 'auto';
-          targetElement.scrollIntoView({ behavior: 'auto', block: 'start' });
-          // Re-enable smooth scroll after a short delay
+
+          document.documentElement.style.scrollBehavior = "auto";
+          targetElement.scrollIntoView({ behavior: "auto", block: "start" });
+
           setTimeout(() => {
-            document.documentElement.style.scrollBehavior = 'smooth';
+            document.documentElement.style.scrollBehavior = "smooth";
           }, 100);
         }
       }
     });
   });
-});
 
-// Header shadow on scroll
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector('.header');
-  if (header) {
-    function handleScroll() {
-      if (window.scrollY > 10) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  accordionHeaders.forEach((header) => {
+    header.addEventListener("click", function () {
+      const item = this.parentElement;
+      const isActive = item.classList.contains("active");
+
+      document.querySelectorAll(".accordion-item").forEach((accItem) => {
+        accItem.classList.remove("active");
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
       }
-    }
-    
-    // Check initial scroll position
-    handleScroll();
-    
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScroll);
-  }
-});
+    });
+  });
 
-// DGT Images hover/click effect
-document.addEventListener("DOMContentLoaded", function () {
-  const dgtImageItems = document.querySelectorAll('.dgt-image-item');
-  
+  // DGT Images hover/click effect
+  const dgtImageItems = document.querySelectorAll(".dgt-image-item");
+
   function checkMobile() {
-    return window.matchMedia('(max-width: 1024px)').matches;
+    return window.matchMedia("(max-width: 1024px)").matches;
   }
 
-  dgtImageItems.forEach(item => {
-    // Click handler for all devices
-    item.addEventListener('click', function(e) {
-      // On mobile/tablet, always use click
-      // On desktop, click also works as alternative to hover
-      if (checkMobile() || e.type === 'click') {
-        // Toggle hover state
-        if (this.classList.contains('hover-active')) {
-          this.classList.remove('hover-active');
+  dgtImageItems.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      if (checkMobile() || e.type === "click") {
+        if (this.classList.contains("hover-active")) {
+          this.classList.remove("hover-active");
         } else {
-          // Remove hover-active from all items first
-          dgtImageItems.forEach(i => i.classList.remove('hover-active'));
-          // Add to clicked item
-          this.classList.add('hover-active');
+          dgtImageItems.forEach((i) => i.classList.remove("hover-active"));
+          this.classList.add("hover-active");
         }
       }
     });
   });
-});
 
-// Header shadow on scroll
-document.addEventListener("DOMContentLoaded", function () {
-  const header = document.querySelector('.header');
-  if (header) {
-    function handleScroll() {
-      if (window.scrollY > 10) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-    
-    // Check initial scroll position
-    handleScroll();
-    
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScroll);
-  }
-});
+  // Contact image fade-in on scroll
+  const contactImage = document.querySelector(".contact-image");
+  if (contactImage) {
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: "0px",
+    };
 
-// DGT Images hover/click effect
-document.addEventListener("DOMContentLoaded", function () {
-  const dgtImageItems = document.querySelectorAll('.dgt-image-item');
-  
-  function checkMobile() {
-    return window.matchMedia('(max-width: 1024px)').matches;
-  }
-
-  dgtImageItems.forEach(item => {
-    // Click handler for all devices
-    item.addEventListener('click', function(e) {
-      // On mobile/tablet, always use click
-      // On desktop, click also works as alternative to hover
-      if (checkMobile() || e.type === 'click') {
-        // Toggle hover state
-        if (this.classList.contains('hover-active')) {
-          this.classList.remove('hover-active');
-        } else {
-          // Remove hover-active from all items first
-          dgtImageItems.forEach(i => i.classList.remove('hover-active'));
-          // Add to clicked item
-          this.classList.add('hover-active');
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          imageObserver.unobserve(entry.target);
         }
-      }
+      });
+    }, observerOptions);
+
+    imageObserver.observe(contactImage);
+  }
+
+  // Project texts fade-in on scroll
+  const projectNames = document.querySelectorAll(".project-name");
+  const projectDescriptions = document.querySelectorAll(".project-description");
+
+  if (projectNames.length > 0 || projectDescriptions.length > 0) {
+    const projectObserverOptions = {
+      threshold: 0.2,
+      rootMargin: "0px",
+    };
+
+    const projectTextObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          projectTextObserver.unobserve(entry.target);
+        }
+      });
+    }, projectObserverOptions);
+
+    projectNames.forEach((name) => {
+      projectTextObserver.observe(name);
     });
-  });
+
+    projectDescriptions.forEach((description) => {
+      projectTextObserver.observe(description);
+    });
+  }
 });

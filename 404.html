@@ -70,6 +70,39 @@
         background-color: #fff;
         color: #2a2a2a;
       }
+
+      @media (max-width: 1024px) {
+        .error-title {
+          font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .error-message {
+          font-size: clamp(0.85rem, 1vw, 0.95rem);
+        }
+
+        .error-return-btn {
+          font-size: clamp(0.75rem, 0.9vw, 0.85rem);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .error-title {
+          font-size: clamp(1.8rem, 4.5vw, 3rem);
+        }
+
+        .error-message {
+          font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+        }
+
+        .error-return-btn {
+          font-size: clamp(0.7rem, 0.85vw, 0.8rem);
+          padding: clamp(10px, 1.3vw, 13px) clamp(25px, 3.5vw, 35px);
+        }
+
+        .error-container {
+          padding: clamp(20px, 2.5vw, 30px) clamp(40px, 5vw, 60px);
+        }
+      }
     </style>
   </head>
   <body class="fade-in">

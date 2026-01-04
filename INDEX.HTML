@@ -33,7 +33,7 @@
       </div>
     </header>
 
-    <!-- Main Hero Section -->
+    <!-- Main -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -45,7 +45,7 @@
               <p>BRAND IDENTITY</p>
               <p>EDITORIAL</p>
               <p>ILLUSTRATION</p>
-              <p>GRAPHIC ADVERTISING</p>
+              <p>BRAND ADVERTISING</p>
             </div>
             <div class="hero-image-wrapper">
               <img
@@ -74,6 +74,17 @@
             width: 100%;
             z-index: 1;
           }
+          @keyframes fadeInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
           .hero-categories-left {
             display: flex;
             flex-direction: column;
@@ -84,11 +95,25 @@
           .hero-categories-left p {
             font-family: "Montserrat", sans-serif;
             font-weight: 400;
-            font-size: 1rem;
+            font-size: clamp(0.75rem, 1vw, 1rem);
             letter-spacing: 0.05em;
             text-transform: uppercase;
             margin: 0;
             margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInLeft 1s ease-out forwards;
+          }
+          .hero-categories-left p:nth-child(1) {
+            animation-delay: 0.1s;
+          }
+          .hero-categories-left p:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+          .hero-categories-left p:nth-child(3) {
+            animation-delay: 0.3s;
+          }
+          .hero-categories-left p:nth-child(4) {
+            animation-delay: 0.4s;
           }
           .hero-categories-left p:last-child {
             margin-bottom: 0;
@@ -105,17 +130,38 @@
             z-index: 0;
             pointer-events: none;
           }
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
           .hero-image-wrapper img {
-            max-width: 450px;
-            max-height: 60vh;
+            max-width: clamp(250px, 35vw, 450px);
+            max-height: clamp(300px, 50vh, 60vh);
             width: 100%;
             height: auto;
             object-fit: contain;
+            animation: fadeIn 1.5s ease-in-out;
           }
+          @keyframes fadeInRight {
+            from {
+              opacity: 0;
+              transform: translateX(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
           .hero-location {
             font-family: "Montserrat", sans-serif;
             font-weight: 400;
-            font-size: 0.875rem;
+            font-size: clamp(0.7rem, 0.9vw, 0.875rem);
             letter-spacing: 0.05em;
             text-transform: uppercase;
             white-space: nowrap;
@@ -124,57 +170,94 @@
             padding-top: 20px;
             z-index: 10;
             margin-top: 120px;
+            opacity: 0;
+            animation: fadeInRight 1s ease-out 0.5s forwards;
           }
           @media (max-width: 1024px) {
             .hero-bottom-section {
-              margin-top: 100px;
+              margin-top: clamp(20px, 3vw, 40px);
             }
             .hero-image-wrapper {
-              top: 50px;
+              position: relative;
+              top: 0;
+              left: 0;
+              transform: none;
+              width: 100%;
+              justify-content: center;
+              margin: 0;
             }
             .hero-categories-left {
-              margin-top: 100px;
+              margin-top: 0;
             }
             .hero-location {
-              margin-top: 100px;
+              margin-top: 0;
             }
             .hero-image-wrapper img {
-              max-width: 350px;
-              max-height: 50vh;
+              max-width: clamp(200px, 30vw, 350px);
+              max-height: clamp(250px, 40vh, 50vh);
+            }
+            .hero-categories-left p {
+              font-size: clamp(0.7rem, 0.9vw, 0.95rem);
+            }
+            .hero-location {
+              font-size: clamp(0.65rem, 0.85vw, 0.8rem);
             }
           }
           @media (max-width: 768px) {
+            .hero-text {
+              position: relative;
+            }
+            .hero-title {
+              position: relative;
+            }
             .hero-bottom-section {
               flex-direction: column;
-              align-items: flex-start;
-              margin-top: 80px;
+              align-items: center;
+              margin-top: clamp(15px, 2.5vw, 30px);
+              position: relative;
             }
             .hero-image-wrapper {
-              position: absolute;
-              top: 80px;
-              left: 50%;
-              transform: translateX(-50%);
+              position: relative;
+              top: 0;
+              left: 0;
+              transform: none;
               width: 100%;
               justify-content: center;
+              margin: 0 0 clamp(15px, 3vw, 30px) 0;
+              order: 2;
+              z-index: 0;
             }
             .hero-image-wrapper img {
-              max-width: 100%;
-              max-height: 400px;
+              max-width: clamp(200px, 80vw, 100%);
+              max-height: clamp(250px, 50vh, 400px);
             }
             .hero-categories-left {
-              margin-top: 60px;
+              margin-top: 0;
+              text-align: center;
+              order: 3;
+              width: 100%;
+              position: relative;
+              z-index: 1;
+              align-items: center;
+            }
+            .hero-categories-left p {
+              font-size: clamp(0.7rem, 1vw, 0.9rem);
             }
             .hero-location {
-              align-self: flex-end;
+              align-self: center;
               padding-top: 0;
-              margin-top: 20px;
+              margin-top: clamp(20px, 3vw, 30px);
+              order: 4;
+              position: relative;
+              z-index: 1;
+              font-size: clamp(0.65rem, 0.9vw, 0.8rem);
             }
           }
         </style>
       </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Me -->
     <section class="about" id="about">
       <div class="container">
         <p class="about-text">
@@ -186,7 +269,7 @@
       </div>
     </section>
 
-    <!-- Last Project Section -->
+    <!-- Last Project -->
     <section class="last-project" id="projects">
       <div class="container">
         <h2 class="section-title">Last Project</h2>
@@ -197,13 +280,12 @@
             />
             Your browser does not support the video tag.
           </video>
-          <div class="project-overlay">
-          </div>
+          <div class="project-overlay"></div>
         </div>
       </div>
     </section>
 
-    <!-- Carousel Text Banner -->
+    <!-- Carousel -->
     <div class="carousel-text-box">
       <div class="scrolling-text">
         <span>IDR / @DSGNS.DELRIO </span>
@@ -221,12 +303,14 @@
       </div>
     </div>
 
-    <!-- Categories Section -->
+    <!-- Categories -->
     <section class="categories">
       <div class="container">
         <ul class="category-list">
           <li>
-            <a href="PROJECTS.HTML#brand-identity">BRAND IDENTITY<span>></span></a>
+            <a href="PROJECTS.HTML#brand-identity"
+              >BRAND IDENTITY<span>></span></a
+            >
             <div class="category-separator"></div>
           </li>
           <li>
@@ -241,37 +325,37 @@
       </div>
     </section>
 
-    <!-- Carousel Section -->
+    <!-- Carousel2 -->
     <section class="carousel-section">
       <div class="carousel-wrapper">
-          <div class="carousel-container">
-            <div class="carousel-slides" id="carousel-slides">
-              <div class="carousel-slide active">
-                <img
-                  src="https://ik.imagekit.io/iapsnyfjt/portfolio/Mockup6.jpg"
-                  alt="Carousel Image 1"
-                />
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="https://ik.imagekit.io/iapsnyfjt/portfolio/libros.jpg"
-                  alt="Carousel Image 2"
-                />
-              </div>
-              <div class="carousel-slide">
-                <img
-                  src="https://ik.imagekit.io/iapsnyfjt/portfolio/bolsaaaaa.jpg"
-                  alt="Carousel Image 3"
-                />
-              </div>
+        <div class="carousel-container">
+          <div class="carousel-slides" id="carousel-slides">
+            <div class="carousel-slide active">
+              <img
+                src="https://ik.imagekit.io/iapsnyfjt/portfolio/Mockup6.jpg"
+                alt="Carousel Image 1"
+              />
             </div>
-            <div class="carousel-dots">
-              <span class="dot active" data-slide="0"></span>
-              <span class="dot" data-slide="1"></span>
-              <span class="dot" data-slide="2"></span>
+            <div class="carousel-slide">
+              <img
+                src="https://ik.imagekit.io/iapsnyfjt/portfolio/libros.jpg"
+                alt="Carousel Image 2"
+              />
+            </div>
+            <div class="carousel-slide">
+              <img
+                src="https://ik.imagekit.io/iapsnyfjt/portfolio/bolsaaaaa.jpg"
+                alt="Carousel Image 3"
+              />
             </div>
           </div>
+          <div class="carousel-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
@@ -279,13 +363,32 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <img src="https://ik.imagekit.io/iapsnyfjt/portfolio/EN%20BLANCO%20LOGO.png" alt="Logo" class="footer-logo-img" />
+            <img
+              src="https://ik.imagekit.io/iapsnyfjt/portfolio/EN%20BLANCO%20LOGO.png"
+              alt="Logo"
+              class="footer-logo-img"
+            />
             <span class="footer-brand-text">DSGNS.DELRIO</span>
           </div>
           <div class="footer-social">
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-            <a href="#">Linkedin</a>
+            <a
+              href="https://www.instagram.com/dsgns.delrio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+            <a
+              href="https://www.tiktok.com/@dsgns.delrio"
+              target="_blank"
+              rel="noopener noreferrer"
+              >TikTok</a
+            >
+            <a
+              href="https://www.linkedin.com/in/irene-del-r%C3%ADo-174784340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Linkedin</a
+            >
           </div>
           <div class="footer-email">DSGNSIRINERIO@GMAIL.COM</div>
         </div>

@@ -1,5 +1,3 @@
-/* Projects Page Styles */
-
 .projects-main {
   padding: clamp(40px, 6vw, 60px) 0 clamp(20px, 3vw, 40px);
   min-height: calc(100vh - 200px);
@@ -17,7 +15,7 @@
 
 .projects-title {
   font-family: "Gilda Display", serif;
-  font-size: clamp(2.5rem, 8vw, 6.6rem);
+  font-size: clamp(1.8rem, 6vw, 6.6rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -44,11 +42,51 @@
   margin-top: clamp(100px, 12vw, 140px);
 }
 
+@media (min-width: 1025px) {
+  .projects-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-top: clamp(80px, 10vw, 120px);
+  }
+
+  .projects-photo {
+    order: 1;
+    margin-top: 0;
+  }
+
+  .projects-info {
+    order: 2;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .projects-subtitle {
+    text-align: center;
+  }
+
+  .projects-year {
+    text-align: center;
+  }
+}
+
 .projects-info {
   display: flex;
   flex-direction: column;
   gap: clamp(10px, 1.5vw, 15px);
   align-self: flex-end;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .projects-subtitle {
@@ -59,6 +97,9 @@
   text-transform: uppercase;
   color: #000;
   margin: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 1s ease-out 0.5s forwards;
 }
 
 .projects-year {
@@ -68,14 +109,26 @@
   letter-spacing: 0.02em;
   color: #000;
   margin: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 1s ease-out 0.7s forwards;
 }
 
 .projects-photo {
-  width: clamp(250px, 28vw, 380px);
+  width: clamp(200px, 25vw, 380px);
   position: relative;
   z-index: 0;
   margin-top: clamp(-100px, -8vw, -140px);
   flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .projects-photo img {
@@ -83,56 +136,130 @@
   height: auto;
   object-fit: cover;
   display: block;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
   .projects-title {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
   }
 
   .projects-content-wrapper {
     flex-direction: column;
     align-items: center;
+    margin-top: clamp(60px, 8vw, 100px);
   }
 
   .projects-photo {
-    width: clamp(250px, 50vw, 400px);
+    width: clamp(180px, 45vw, 350px);
     margin-right: 0;
+    margin-top: 0;
+    order: 1;
   }
 
   .projects-info {
-    align-items: center;
-    text-align: center;
+    align-items: flex-end;
+    text-align: right;
+    order: 2;
+    margin-top: 0;
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  .projects-subtitle {
+    text-align: right;
+  }
+
+  .projects-year {
+    text-align: right;
+  }
+
+  .projects-subtitle {
+    font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+    text-align: right;
+  }
+
+  .projects-year {
+    font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+    text-align: right;
+  }
+
+  .project-section-title {
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+
+  .project-info .project-name {
+    font-size: clamp(0.65rem, 0.8vw, 0.85rem);
+  }
+
+  .project-info .project-description {
+    font-size: clamp(0.6rem, 0.75vw, 0.75rem);
+  }
+
+  .project-image-label {
+    font-size: clamp(0.6rem, 0.75vw, 0.75rem);
   }
 }
 
 @media (max-width: 768px) {
   .projects-title {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: clamp(-60px, -6vw, -80px);
   }
 
   .projects-content-wrapper {
     gap: clamp(30px, 5vw, 40px);
-    margin-top: clamp(80px, 10vw, 120px);
+    margin-top: clamp(100px, 12vw, 140px);
   }
 
   .projects-photo {
-    width: 100%;
-    max-width: 400px;
+    width: clamp(200px, 70vw, 350px);
+    max-width: 350px;
     margin-top: clamp(-60px, -6vw, -100px);
+  }
+
+  .projects-info {
+    align-items: flex-end;
+    text-align: right;
+    align-self: flex-end;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .projects-subtitle {
+    font-size: clamp(0.6rem, 0.75vw, 0.75rem);
+    text-align: right;
+  }
+
+  .projects-year {
+    font-size: clamp(0.6rem, 0.75vw, 0.75rem);
+    text-align: right;
+  }
+
+  .project-section-title {
+    font-size: clamp(0.9rem, 2.5vw, 1.8rem);
+  }
+
+  .project-info .project-name {
+    font-size: clamp(0.6rem, 0.75vw, 0.8rem);
+  }
+
+  .project-info .project-description {
+    font-size: clamp(0.55rem, 0.7vw, 0.7rem);
+  }
+
+  .project-image-label {
+    font-size: clamp(0.55rem, 0.7vw, 0.7rem);
   }
 }
 
-/* Project Section Styles */
 .project-section {
   padding: clamp(60px, 8vw, 80px) 0;
 }
 
 .project-section-title {
   font-family: "Gilda Display", serif;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 400;
   line-height: 1.2;
   text-align: center;
@@ -194,18 +321,36 @@
   margin-top: clamp(60px, 8vw, 100px);
 }
 
-/* Margin top for Ainhoa Montes project info (second project-info in brand-identity section) */
 #brand-identity .project-info:nth-of-type(2) {
   margin-top: clamp(60px, 8vw, 100px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-name {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.3vw, 1.5rem);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: clamp(20px, 3vw, 30px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.project-name.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-description {
@@ -216,6 +361,14 @@
   letter-spacing: 0.02em;
   max-width: min(900px, 100%);
   margin-bottom: clamp(20px, 3vw, 30px);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.project-description.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-description:last-child {
@@ -271,7 +424,7 @@
   opacity: 0.7;
 }
 
-/* Velosophy gallery - no labels, subtle animation */
+/* Velosophy*/
 .project-gallery-2x3 .project-image-item .project-image-label {
   display: none;
 }
@@ -288,14 +441,12 @@
   opacity: 1;
 }
 
-/* Project Gallery 2x3 Grid */
 .project-gallery-2x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(20px, 3vw, 40px);
 }
 
-/* Project Gallery 3x3 Grid */
 .project-gallery-3x3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -310,14 +461,15 @@
   transform: scale(1.02);
 }
 
-
-/* Responsive Project Section */
 @media (max-width: 1024px) {
   .project-video-wrapper {
     height: clamp(300px, 40vw, 450px);
   }
 
-  /* Tablet: 2 columns */
+  .dgt-side-text {
+    font-size: clamp(0.85rem, 3vw, 1.2rem);
+  }
+
   .project-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(20px, 3vw, 30px);
@@ -339,7 +491,6 @@
     height: clamp(250px, 50vw, 350px);
   }
 
-  /* Mobile: 1 column */
   .project-gallery {
     grid-template-columns: 1fr;
     gap: clamp(20px, 4vw, 30px);
@@ -362,7 +513,7 @@
   }
 }
 
-/* DGT Content Wrapper */
+/* DGT */
 .dgt-content-wrapper {
   display: flex;
   align-items: center;
@@ -376,7 +527,7 @@
 }
 
 .dgt-text-side {
-  display: none; /* Hidden by default for mobile/tablet */
+  display: none;
 }
 
 .dgt-side-text {
@@ -391,7 +542,7 @@
   white-space: nowrap;
 }
 
-/* DGT Images with Hover Effect */
+/* DGT Imagenes */
 .dgt-images-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -424,7 +575,6 @@
   opacity: 0;
 }
 
-/* Hover effect only on desktop */
 @media (min-width: 1025px) {
   .dgt-image-item:hover .dgt-image-default {
     opacity: 0;
@@ -435,7 +585,6 @@
   }
 }
 
-/* Click effect for all devices */
 .dgt-image-item.hover-active .dgt-image-default {
   opacity: 0;
 }
@@ -444,7 +593,6 @@
   opacity: 1;
 }
 
-/* Show text side on desktop only */
 @media (min-width: 1025px) {
   .dgt-text-side {
     display: block;
@@ -455,9 +603,12 @@
   .dgt-images-container {
     grid-template-columns: 1fr;
   }
-  
+
   .dgt-content-wrapper {
     flex-direction: column;
   }
-}
 
+  .dgt-side-text {
+    font-size: clamp(0.75rem, 2.5vw, 1.1rem);
+  }
+}

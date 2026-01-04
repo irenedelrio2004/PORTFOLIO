@@ -34,10 +34,8 @@
       </div>
     </header>
 
-    <!-- Content -->
     <main class="about-main">
       <div class="container">
-        <!-- Hero Section with Name and Photo -->
         <section class="about-hero">
           <h1 class="about-title">IRENE DEL RÍO ROMO</h1>
           <div class="about-content-wrapper">
@@ -57,7 +55,6 @@
           </div>
         </section>
 
-        <!-- Additional Biography -->
         <section class="about-bio">
           <p>
             I'M IN MY FOURTH YEAR OF UNIVERSITY AND HAVE ALWAYS BEEN PASSIONATE
@@ -77,7 +74,6 @@
           </p>
         </section>
 
-        <!-- Accordion Sections -->
         <section class="accordion-section">
           <div class="accordion-item">
             <div class="accordion-header">
@@ -86,16 +82,30 @@
             </div>
             <div class="accordion-content">
               <div class="accordion-entry">
-                <p class="accordion-title">SOCIAL SCIENCES HIGH SCHOOL DIPLOMA - 2020-2022</p>
-                <p class="accordion-subtitle">Gredos San Diego Moratalaz School</p>
+                <p class="accordion-title">
+                  SOCIAL SCIENCES HIGH SCHOOL DIPLOMA - 2020-2022
+                </p>
+                <p class="accordion-subtitle">
+                  Gredos San Diego Moratalaz School
+                </p>
               </div>
               <div class="accordion-entry">
-                <p class="accordion-title">BACHELOR'S DEGREE IN GRAPHIC AND MULTIMEDIA DESIGN - 3RD YEAR. 2025</p>
-                <p class="accordion-subtitle">Budapest Metropolitan University</p>
+                <p class="accordion-title">
+                  BACHELOR'S DEGREE IN GRAPHIC AND MULTIMEDIA DESIGN - 3RD YEAR.
+                  2025
+                </p>
+                <p class="accordion-subtitle">
+                  Budapest Metropolitan University
+                </p>
               </div>
               <div class="accordion-entry">
-                <p class="accordion-title">BACHELOR'S DEGREE IN GRAPHIC AND MULTIMEDIA DESIGN - 1, 2 AND 4TH YEAR</p>
-                <p class="accordion-subtitle">University Of Design, Innovation And Technology (UDIT)</p>
+                <p class="accordion-title">
+                  BACHELOR'S DEGREE IN GRAPHIC AND MULTIMEDIA DESIGN - 1, 2 AND
+                  4TH YEAR
+                </p>
+                <p class="accordion-subtitle">
+                  University Of Design, Innovation And Technology (UDIT)
+                </p>
               </div>
             </div>
           </div>
@@ -108,11 +118,19 @@
             <div class="accordion-content">
               <div class="accordion-entry">
                 <p class="accordion-title">BROOKLING FITBOXING GYMS - 2023</p>
-                <p class="accordion-subtitle">Graphic wall finishes for gyms in Spain and across Europe.</p>
+                <p class="accordion-subtitle">
+                  Graphic wall finishes for gyms in Spain and across Europe.
+                </p>
               </div>
               <div class="accordion-entry">
-                <p class="accordion-title">STUDIOS MIKADO III, S.L. - ÓSCAR MARINÉ – 2024/25</p>
-                <p class="accordion-subtitle">Logistics and execution of projects for Óscar Mariné, including adding design elements to his works and events, as well as design projects for external clients.</p>
+                <p class="accordion-title">
+                  STUDIOS MIKADO III, S.L. - ÓSCAR MARINÉ – 2024/25
+                </p>
+                <p class="accordion-subtitle">
+                  Logistics and execution of projects for Óscar Mariné,
+                  including adding design elements to his works and events, as
+                  well as design projects for external clients.
+                </p>
               </div>
             </div>
           </div>
@@ -143,7 +161,9 @@
                 <p class="accordion-title languages-title">SPANISH: Native</p>
               </div>
               <div class="accordion-entry">
-                <p class="accordion-title languages-title">ENGLISH: Intermediate</p>
+                <p class="accordion-title languages-title">
+                  ENGLISH: Intermediate
+                </p>
               </div>
             </div>
           </div>
@@ -153,7 +173,6 @@
 
     <script src="assets/js/main.js"></script>
     <script>
-      // Accordion functionality
       document.addEventListener("DOMContentLoaded", function () {
         const accordionHeaders = document.querySelectorAll(".accordion-header");
 
@@ -162,12 +181,10 @@
             const accordionItem = this.parentElement;
             const isActive = accordionItem.classList.contains("active");
 
-            // Close all accordion items
             document.querySelectorAll(".accordion-item").forEach((item) => {
               item.classList.remove("active");
             });
 
-            // Open clicked item if it wasn't active
             if (!isActive) {
               accordionItem.classList.add("active");
             }
@@ -176,18 +193,36 @@
       });
     </script>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <img src="https://ik.imagekit.io/iapsnyfjt/portfolio/EN%20BLANCO%20LOGO.png" alt="Logo" class="footer-logo-img" />
+            <img
+              src="https://ik.imagekit.io/iapsnyfjt/portfolio/EN%20BLANCO%20LOGO.png"
+              alt="Logo"
+              class="footer-logo-img"
+            />
             <span class="footer-brand-text">DSGNS.DELRIO</span>
           </div>
           <div class="footer-social">
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
-            <a href="#">Linkedin</a>
+            <a
+              href="https://www.instagram.com/dsgns.delrio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagram</a
+            >
+            <a
+              href="https://www.tiktok.com/@dsgns.delrio"
+              target="_blank"
+              rel="noopener noreferrer"
+              >TikTok</a
+            >
+            <a
+              href="https://www.linkedin.com/in/irene-del-r%C3%ADo-174784340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Linkedin</a
+            >
           </div>
           <div class="footer-email">DSGNSIRINERIO@GMAIL.COM</div>
         </div>

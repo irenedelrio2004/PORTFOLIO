@@ -9,7 +9,6 @@ html {
   font-size: 16px;
 }
 
-/* Disable smooth scroll for category links */
 .category-list a {
   scroll-behavior: auto;
 }
@@ -46,7 +45,6 @@ video {
   display: block;
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   width: 100%;
@@ -54,10 +52,10 @@ video {
   padding: 0 clamp(20px, 4vw, 40px);
 }
 
-/* Typography */
+/* Tipografia */
 .hero-title {
   font-family: "Gilda Display", serif;
-  font-size: clamp(2.5rem, 8vw, 6.6rem);
+  font-size: clamp(1.8rem, 6vw, 6.6rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -75,7 +73,7 @@ video {
 
 .section-title {
   font-family: "Gilda Display", serif;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: clamp(20px, 3vw, 35px);
@@ -137,7 +135,7 @@ video {
   text-decoration: none;
 }
 
-/* Menu Toggle Button (Hamburger) */
+/* Menu hamburguesa */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -172,7 +170,6 @@ video {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Hero Section */
 .hero {
   padding: clamp(40px, 6vw, 60px) 0 clamp(60px, 10vw, 100px);
 }
@@ -199,7 +196,7 @@ video {
 .hero-categories p {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: clamp(0.875rem, 1vw, 1rem);
+  font-size: clamp(0.75rem, 0.9vw, 1rem);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -220,10 +217,21 @@ video {
   border-radius: 0;
 }
 
-/* About Section */
+/* About */
 .about {
-  padding: clamp(50px, 8vw, 80px) 0;
+  padding: clamp(60px, 10vw, 100px) 0 clamp(50px, 8vw, 80px);
   text-align: center;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .about-text {
@@ -235,8 +243,8 @@ video {
   margin: 0 auto clamp(25px, 1.2vw, 30px);
   letter-spacing: 0.02em;
   opacity: 0;
-  transform: translateY(30px);
-  animation: slideUpFade 0.8s ease-out 1.2s forwards;
+  transform: translateX(30px);
+  animation: fadeInRight 1s ease-out 1.2s forwards;
 }
 
 .learn-more {
@@ -247,8 +255,8 @@ video {
   text-transform: uppercase;
   text-decoration: underline;
   opacity: 0;
-  transform: translateY(30px);
-  animation: slideUpFade 0.8s ease-out 1.4s forwards;
+  transform: translateX(30px);
+  animation: fadeInRight 1s ease-out 1.4s forwards;
 }
 
 @keyframes slideUpFade {
@@ -262,7 +270,7 @@ video {
   }
 }
 
-/* Last Project Section */
+/* Last Project*/
 .last-project {
   padding: clamp(50px, 8vw, 80px) 0;
 }
@@ -290,8 +298,7 @@ video {
   padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2vw, 18px);
 }
 
-
-/* Categories Section */
+/* Categories */
 .categories {
   padding: clamp(50px, 6vw, 60px) 0;
 }
@@ -320,7 +327,7 @@ video {
 .category-list li a {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.875rem, 1.1vw, 1.1rem);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   display: flex;
@@ -331,12 +338,23 @@ video {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .category-list li a {
+    font-size: clamp(0.75rem, 0.9vw, 0.95rem);
+    padding: clamp(15px, 2.5vw, 25px) 0;
+  }
+
+  .category-list li a span {
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+  }
+}
+
 .category-list li a span {
   font-size: clamp(1.1rem, 1.3vw, 1.2rem);
   margin-left: auto;
 }
 
-/* Carousel Section */
+/* Carousel */
 .carousel-section {
   padding: clamp(10px, 2vw, 20px) 0 clamp(20px, 4vw, 40px);
   width: 100%;
@@ -440,7 +458,6 @@ video {
   object-fit: cover;
 }
 
-/* Hover image effect for carousel */
 .carousel-slide-hover {
   position: relative;
 }
@@ -518,6 +535,13 @@ video {
   align-items: center;
   justify-content: center;
   gap: clamp(12px, 1.5vw, 18px);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1025px) {
+  .footer-brand:hover {
+    transform: scale(1.05);
+  }
 }
 
 .footer-logo-img {
@@ -525,6 +549,13 @@ video {
   height: clamp(60px, 7vw, 85px);
   object-fit: contain;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1025px) {
+  .footer-logo-img:hover {
+    transform: scale(1.1);
+  }
 }
 
 .footer-brand-text {
@@ -534,6 +565,13 @@ video {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #fff;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1025px) {
+  .footer-brand-text:hover {
+    transform: scale(1.05);
+  }
 }
 
 .footer-social {
@@ -548,11 +586,20 @@ video {
   font-size: clamp(0.875rem, 1vw, 0.95rem);
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.7);
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.footer-social a:hover {
-  opacity: 0.3;
+@media (min-width: 1025px) {
+  .footer-social a:hover {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-social a:hover {
+    opacity: 0.3;
+  }
 }
 
 .footer-email {
@@ -561,20 +608,27 @@ video {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   letter-spacing: 0.05em;
   color: #fff;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 1025px) {
+  .footer-email:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* ========================================
-   MEDIA QUERIES - TODOS AL FINAL
+   MEDIA QUERIES - movil  y tablet
    ======================================== */
 
 /* iPad */
 @media (max-width: 1024px) {
   .hero-title {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
   }
 
   .section-title {
-    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+    font-size: clamp(1.5rem, 3.5vw, 2.8rem);
   }
 
   .carousel-text-box {
@@ -589,6 +643,36 @@ video {
 
   .scrolling-text span {
     font-size: clamp(0.875rem, 1.2vw, 1.1rem);
+  }
+
+  .about {
+    padding: clamp(70px, 12vw, 120px) 0 clamp(60px, 10vw, 100px);
+  }
+
+  .about-text {
+    font-size: clamp(0.9rem, 1.05vw, 1.05rem);
+    margin-top: 0;
+  }
+
+  .learn-more {
+    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+  }
+
+  .footer-logo-img {
+    width: clamp(40px, 5vw, 60px);
+    height: clamp(40px, 5vw, 60px);
+  }
+
+  .footer-brand-text {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+  }
+
+  .footer-social a {
+    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+  }
+
+  .footer-email {
+    font-size: clamp(0.85rem, 1.2vw, 1.1rem);
   }
 
   .carousel-wrapper {
@@ -628,7 +712,6 @@ video {
     height: clamp(250px, 30vw, 300px);
   }
 
-  /* Menu Toggle for iPad */
   .menu-toggle {
     display: flex;
   }
@@ -661,19 +744,19 @@ video {
   .nav-links a {
     display: block;
     padding: 10px 0;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
   }
 }
 
 /* Móvil */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     white-space: normal;
   }
 
   .section-title {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
   }
 
   .carousel-text-box {
@@ -689,6 +772,48 @@ video {
 
   .scrolling-text span {
     font-size: clamp(0.75rem, 1vw, 0.95rem);
+  }
+
+  .hero {
+    padding-bottom: clamp(60px, 10vw, 100px);
+  }
+
+  .about {
+    padding: clamp(60px, 10vw, 100px) 0 clamp(50px, 8vw, 80px);
+  }
+
+  .about-text {
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    margin-top: 0;
+  }
+
+  .learn-more {
+    font-size: clamp(0.7rem, 0.85vw, 0.9rem);
+  }
+
+  .footer-logo-img {
+    width: clamp(35px, 4.5vw, 50px);
+    height: clamp(35px, 4.5vw, 50px);
+  }
+
+  .footer-brand-text {
+    font-size: clamp(1rem, 2vw, 1.8rem);
+  }
+
+  .footer-social a {
+    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+  }
+
+  .footer-email {
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+  }
+
+  .footer-social a {
+    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+  }
+
+  .footer-email {
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
   }
 
   .project-preview {
@@ -711,7 +836,6 @@ video {
     position: relative;
   }
 
-  /* Menu Toggle for Mobile */
   .menu-toggle {
     display: flex;
   }
@@ -744,7 +868,7 @@ video {
   .nav-links a {
     display: block;
     padding: 12px 0;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   }
 
   .hero-image {
