@@ -1,4 +1,4 @@
-web:
+web: https://irenedelrio2004.github.io/PORTFOLIO/
 
 PORTFOLIO IRENE DEL RÍO ROMO
 
