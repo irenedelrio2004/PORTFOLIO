@@ -1,4 +1,4 @@
-web:
+web: https://irenedelrio2004.github.io/PORTFOLIO/
 
 PORTFOLIO IRENE DEL RÍO ROMO
 
@@ -63,6 +63,13 @@ Diseñada para ser reutilizable y personalizable.
    Puedes modificar el texto o el diseño.
 
 CAPTURAS DE PANTALLA:
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
+https://ik.imagekit.io/iapsnyfjt/portfolio/image.png
 
 ## Despliegue
 
