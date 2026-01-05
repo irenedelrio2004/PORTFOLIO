@@ -10,7 +10,7 @@
 
 .about-title {
   font-family: "Gilda Display", serif;
-  font-size: clamp(1.8rem, 6vw, 6.6rem);
+  font-size: clamp(2.5rem, 8vw, 6.6rem);
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -38,20 +38,11 @@
 
 .about-photo {
   flex-shrink: 0;
-  width: clamp(200px, 25vw, 380px);
+  width: clamp(250px, 28vw, 380px);
   position: relative;
   z-index: 0;
   margin-top: clamp(-100px, -8vw, -140px);
   margin-left: clamp(40px, 5vw, 60px);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .about-photo img {
@@ -59,34 +50,19 @@
   height: auto;
   object-fit: cover;
   display: block;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
 .about-intro {
   flex: 1;
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 .about-intro p {
   font-family: "Montserrat", sans-serif;
   font-weight: 310;
-  font-size: clamp(0.95rem, 1.1vw, 1.4rem);
+  font-size: clamp(1.2rem, 1.2vw, 1.4rem);
   line-height: 1.8;
   letter-spacing: 0.02em;
   color: #000;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeInLeft 1s ease-out 0.3s forwards;
 }
 
 .about-bio {
@@ -101,24 +77,10 @@
   letter-spacing: 0.02em;
   color: #000;
   margin-bottom: clamp(25px, 3vw, 35px);
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeInLeft 1s ease-out forwards;
-}
-
-.about-bio p:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-.about-bio p:nth-child(2) {
-  animation-delay: 0.7s;
 }
 
 .about-bio p:last-child {
   margin-bottom: 0;
-  animation: none;
-  opacity: 1;
-  transform: none;
 }
 
 .university-link {
@@ -126,10 +88,6 @@
   color: #000;
   cursor: pointer;
   transition: opacity 0.3s ease;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: fadeInLeft 1s ease-out 0.9s forwards;
-  display: inline-block;
 }
 
 .university-link:hover {
@@ -270,7 +228,7 @@
 
 @media (max-width: 1024px) {
   .about-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 10vw, 7rem);
   }
 
   .about-content-wrapper {
@@ -279,92 +237,30 @@
   }
 
   .about-photo {
-    width: clamp(180px, 45vw, 350px);
-    margin-left: auto;
-    margin-right: auto;
+    width: clamp(250px, 50vw, 400px);
   }
 
   .about-intro {
     padding-top: clamp(30px, 4vw, 40px);
   }
-
-  .about-intro p {
-    font-size: clamp(0.75rem, 0.9vw, 0.95rem);
-  }
-
-  .about-bio p {
-    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
-  }
-
-  .accordion-header {
-    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
-  }
-
-  .accordion-icon {
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
-  }
-
-  .accordion-title {
-    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
-  }
-
-  .accordion-subtitle {
-    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
-  }
-
-  .programs-list li {
-    font-size: clamp(0.75rem, 0.9vw, 0.9rem);
-  }
 }
 
 @media (max-width: 768px) {
   .about-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     margin-bottom: clamp(30px, 5vw, 40px);
   }
 
   .about-content-wrapper {
     gap: clamp(30px, 5vw, 40px);
-    flex-direction: column;
-    align-items: center;
   }
 
   .about-photo {
-    width: clamp(200px, 70vw, 350px);
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: 400px;
   }
 
   .about-intro {
     padding-top: clamp(20px, 3vw, 30px);
-  }
-
-  .about-intro p {
-    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
-  }
-
-  .about-bio p {
-    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
-  }
-
-  .accordion-header {
-    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
-  }
-
-  .accordion-icon {
-    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
-  }
-
-  .accordion-title {
-    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
-  }
-
-  .accordion-subtitle {
-    font-size: clamp(0.65rem, 0.8vw, 0.8rem);
-  }
-
-  .programs-list li {
-    font-size: clamp(0.7rem, 0.85vw, 0.85rem);
   }
 }

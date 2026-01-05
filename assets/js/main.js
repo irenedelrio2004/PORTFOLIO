@@ -174,22 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", function () {
-      const item = this.parentElement;
-      const isActive = item.classList.contains("active");
-
-      document.querySelectorAll(".accordion-item").forEach((accItem) => {
-        accItem.classList.remove("active");
-      });
-
-      if (!isActive) {
-        item.classList.add("active");
-      }
-    });
-  });
-
   // DGT Images hover/click effect
   const dgtImageItems = document.querySelectorAll(".dgt-image-item");
 
