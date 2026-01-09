@@ -1,0 +1,9 @@
+# Sistema
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+
+# Logs
+*.log
