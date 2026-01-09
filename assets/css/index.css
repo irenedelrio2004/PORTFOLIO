@@ -45,11 +45,10 @@ video {
   display: block;
 }
 
+/* Bootstrap container override - mantiene el padding personalizado */
 .container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 40px);
+  padding-left: clamp(20px, 4vw, 40px) !important;
+  padding-right: clamp(20px, 4vw, 40px) !important;
 }
 
 /* Tipografia */
@@ -242,9 +241,7 @@ video {
   max-width: min(900px, 90%);
   margin: 0 auto clamp(25px, 1.2vw, 30px);
   letter-spacing: 0.02em;
-  opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInRight 1s ease-out 1.2s forwards;
+  /* Animación manejada por GSAP */
 }
 
 .learn-more {
@@ -254,9 +251,7 @@ video {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: underline;
-  opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInRight 1s ease-out 1.4s forwards;
+  /* Animación manejada por GSAP */
 }
 
 @keyframes slideUpFade {

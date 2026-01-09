@@ -97,9 +97,7 @@
   text-transform: uppercase;
   color: #000;
   margin: 0;
-  opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInRight 1s ease-out 0.5s forwards;
+  /* Animación manejada por GSAP */
 }
 
 .projects-year {
@@ -109,9 +107,7 @@
   letter-spacing: 0.02em;
   color: #000;
   margin: 0;
-  opacity: 0;
-  transform: translateX(30px);
-  animation: fadeInRight 1s ease-out 0.7s forwards;
+  /* Animación manejada por GSAP */
 }
 
 .projects-photo {
@@ -136,7 +132,7 @@
   height: auto;
   object-fit: cover;
   display: block;
-  animation: fadeIn 1.5s ease-in-out;
+  /* Animación manejada por GSAP */
 }
 
 @media (max-width: 1024px) {
@@ -293,7 +289,7 @@
   background-color: #2a2a2a;
   height: clamp(250px, 35vw, 500px);
   overflow: hidden;
-  animation: fadeIn 1.5s ease-in-out;
+  /* Animación manejada por GSAP */
 }
 
 @keyframes fadeIn {
@@ -343,14 +339,11 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: clamp(20px, 3vw, 30px);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Animación manejada por GSAP */
 }
 
 .project-name.visible {
-  opacity: 1;
-  transform: translateY(0);
+  /* Mantener para compatibilidad, pero GSAP maneja la animación */
 }
 
 .project-description {
@@ -361,9 +354,7 @@
   letter-spacing: 0.02em;
   max-width: min(900px, 100%);
   margin-bottom: clamp(20px, 3vw, 30px);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Animación manejada por GSAP */
 }
 
 .project-description.visible {
